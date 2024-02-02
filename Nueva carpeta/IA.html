@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Función para simular el lanzamiento de un dado
+function lanzarDado() {
+    return Math.floor(Math.random() * 6) + 1;
+}
+
+// Objeto para almacenar el recuento de cada número
+var conteo = {
+    1: 0,
+    2: 0,
+    3: 0,
+    4: 0,
+    5: 0,
+    6: 0
+};
+
+// Simular 1000 lanzamientos
+for (var i = 0; i < 1000; i++) {
+    var resultado = lanzarDado();
+    conteo[resultado]++;
+}
+
+// Mostrar los resultados
+document.write("Resultado del conteo después de 1000 lanzamientos:<br>");
+document.write("1: " + conteo[1] + " veces<br>");
+document.write("2: " + conteo[2] + " veces<br>");
+document.write("3: " + conteo[3] + " veces<br>");
+document.write("4: " + conteo[4] + " veces<br>");
+document.write("5: " + conteo[5] + " veces<br>");
+document.write("6: " + conteo[6] + " veces<br>");
+    </script>
+</body>
+</html>

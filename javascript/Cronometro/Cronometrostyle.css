@@ -1,0 +1,49 @@
+
+body{
+  background-color: grey;
+  display:flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+  padding: 1em;
+  margin: 0%;
+}
+h1{
+  display: flex;
+  justify-content: center;
+  font-family: 'alarma';
+  font-size: 3em;
+  margin: 0.5em;
+}
+.botones{
+  display:flex;
+  justify-content: center;
+}
+button{
+  cursor: pointer;
+  animation: 1s;
+  padding: 1em;
+  margin: 1em;
+  transition: all 0.3s ease-in;
+  border: 3px solid black;
+  box-shadow: inset ;
+}
+button:hover{
+  transform: scale(1.1);
+  border-radius: 4px;
+}
+#cronometro{
+  display:flex;
+  justify-content: center;
+  font-size: 2.5em;
+  font-family: 'alarma';
+}
+.botones{
+  display:flex;
+  justify-content: center;
+}
+@font-face {
+    font-family: 'alarma';
+    src: url(alarm.ttf);
+  }
+ 

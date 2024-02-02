@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Programa generador de contraseñas seguras</title>
+    <meta charset="utf-8" />
+  </head>
+
+  <body>
+
+    <script>
+
+      //Creamos un vector con todos los signos posibles
+      let abecedario = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", 
+      "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "0", "1", 
+      "2", "3", "4", "5", "6", "7", "8", "9", ".", "-", "_", "$", "&", "#", "@"];
+
+      // pedir un número al usuario y pasarlo a entero
+      let numero = parseInt(window.prompt("Escribe un numero");
+      let contrasenya = '';
+
+      // generamos la contraseña con un buble de x veces
+      for (let i = 0; i < numero; i++) {
+        numeroAleatorio = parseInt(Math.random() * abecedario.length);
+        //Vamos añadiendo el caracter seleccionado a la variable contrasenya
+        contrasenya += abecedario[numeroAleatorio];
+        //document.write(abecedario[numeroAleatorio]);
+        document.write(contrasenya+'  ');
+      }
+
+      document.write('  ' + contrasenya);
+      // Mostramos contra por consola
+      document.write(contrasenya);
+
+    </script>
+
+  </body>
+
+</html>

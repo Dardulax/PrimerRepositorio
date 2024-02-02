@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss>
+    <equipos_de_Futbol>
+        <nombre tipo="Real Madrid"/>
+        <ciudad tipo="Madrid"/>    
+        <entrenador tipo="" />
+        <jugadores>
+            <jugador>
+                <nombre posicion=""/>
+                <posicion> Delantero </posicion>
+                <nacionalidad> Española </nacionalidad>
+            </jugador>
+            <jugador>
+                <nombre posicion=""/>
+                <posicion> Delantero </posicion>
+                <nacionalidad> Española </nacionalidad>
+            </jugador>
+        </jugadores>
+    </equipos_de_Futbol>
+</rss>

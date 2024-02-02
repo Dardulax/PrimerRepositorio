@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cronómetro</title>
+<link rel="stylesheet" href="Cronometrostyle.css">
+</head>
+<body>
+  <h1>CRONOMETRO</h1>
+  <div id="cronometro">00:00:00:000</div>
+  <div class="botones">
+    <button onclick="start()" id="Scolor"><img src="start.png"></button>
+    <button onclick="stop()" id="Pcolor"><img src="pause.png"></button>
+    <button onclick="reset()" id="Dcolor"><img src="delete.png"></button>
+  </div>
+
+  <script>
+    /*creamos 4 variables donde almacenaran el StartTime que es
+    el inicio del cronometro. running que nos dice si esta activo 
+    el cronometro o no. y el interval que nos resetea el cronometro 
+    parandolo a su vez y time que almacena el valor actual del tiempo 
+    en el cual se activo el cronometro*/
+    let startTime;
+    let running = false;
+    let interval;
+    let time;
+    //funcion start cadena de comandos al ejecutar start
+    function start() {
+      // if (!running)>>>nos dice si (running) es falso(!)
+      //ejecuta solo cuando runing es falso si es cierto no hace nada  
+      if (!running) {
+        //startTime almacena los datos del tiempo real= que es el comando
+        // Date.now()
+        if (startTime){
+          startTime = startTime + (Date.now() - time);
+        }else{
+          startTime = Date.now();
+        }        //setinterval es una funcion que ejecuta otra funcion repetidamente((llamada updateTime),(tiempo en milisegundos entre llamada))
+        //updateTime nos da la información del tiempo
+        //interval es la variable donde metemos la información de nuestro 
+        //cronometro a tiempo real 
+        interval = setInterval(updateTime, 10);
+        //runnig cambia de false a true ya que deja de estar desctivado a 
+        //activado 
+        running = true;
+        const Scolor = document.getElementById('Scolor');
+        Scolor.style.backgroundColor='green';
+        Pcolor.style.backgroundColor='white';
+      }
+    }
+    //función stop cadena de comandos cuando se pulsa stop
+    function stop() {
+      //borra las llamadas constantes haciendo que no se actualize
+      //parando el cronometro en el proceso
+      clearInterval(interval);
+      //se desactiva el estado de activado 
+      running = false;
+      time = Date.now();
+      const Pcolor=document.getElementById('Pcolor');
+      Pcolor.style.backgroundColor='red';
+      Scolor.style.backgroundColor= 'white';
+    }
+    
+    //función reset cadena de comando cuando se pulsa reset
+    function reset() {
+      //borra las llamada constantes del setInterval parandolo 
+      //en el proceso
+      clearInterval(interval);
+      //cambiamos el estado running a false para indicar la 
+      //inactividad de este
+      running = false;
+      //cambia/sobreescribe el texto  en el id cronometro 
+      document.getElementById('cronometro').innerText = '00:00:00:000';
+      Pcolor.style.backgroundColor='white';
+      Scolor.style.backgroundColor='white';
+    }
+    //funcion de actualización de la cadena de comandos
+    function updateTime() {
+      //dentro de la constante se añade Date.now()
+      //que tiene el tiempo de real actual
+      const currentTime = Date.now();
+      //dentro de la constante elapsedTime tiene nuevo dato de 
+      //(tiempo total / tiempo actual de Inicio)
+      const elapsedTime = new Date(currentTime - startTime);
+      //dentro de la constante horas tiene 
+      const hours = elapsedTime.getUTCHours().toString().padStart(2, '0');
+      const minutes = elapsedTime.getUTCMinutes().toString().padStart(2, '0');
+      const seconds = elapsedTime.getUTCSeconds().toString().padStart(2, '0');
+      const milliseconds = elapsedTime.getUTCMilliseconds().toString().padStart(3,'0');
+      document.getElementById('cronometro').innerText = `${hours}:${minutes}:${seconds}:${milliseconds}`;
+    }
+    
+  </script>
+</body>
+</html>

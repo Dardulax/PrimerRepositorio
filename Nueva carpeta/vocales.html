@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let a = e = i = o = u = espacio = 0;
+        VectorLetras = ConsultarTexto();
+
+        function ConsultarTexto(){
+            let PideTexto = window.prompt("Escribe un texto con LETRAS");
+            let TextoRoto = PideTexto.toLowerCase().split("");
+            return TextoRoto
+        }
+        for (k=0; k<VectorLetras.length; k++){
+
+            switch(VectorLetras[k]){
+                case "a":
+                a++;
+                break;
+                case "e":
+                e++;
+                break;
+                case "i":
+                i++;
+                break;
+                case "o":
+                o++;
+                break;
+                case "u":
+                u++
+                break;
+                case " ":
+                espacio++;
+
+            }
+        }
+        Totalvocales = a + e + i + o + u;
+        document.write("Hay "+ a + " Vocales 'a'<br>");
+        document.write("Hay "+ e + " Vocales 'e'<br>");
+        document.write("Hay "+ i + " Vocales 'i'<br>");
+        document.write("Hay "+ o + " Vocales 'o'<br>");
+        document.write("Hay "+ u + " Vocales 'u'<br>");
+
+        document.write("total de vocales: "+ Totalvocales+"<br>");
+        document.write("Total de espacios en blanco: "+ espacio+"<br>");
+        document.write("Total de caracteres escritor: "+ VectorLetras.length+"<br>");
+        document.write("Texto original. <b>"+ VectorLetras.join("") + "</b>");
+
+
+    </script>
+</body>
+</html>

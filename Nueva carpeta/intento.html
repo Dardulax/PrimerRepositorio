@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let frecuenciaNumeros = Array(10).fill(0);
+        let textoUsuario = window.prompt("Escribe un texto que contenga números");
+        let caracteres = textoUsuario.split("");
+        for (let i = 0; i < caracteres.length; i++) {
+            if (!isNaN(caracteres[i])) {
+                let numero = parseInt(caracteres[i]);
+                frecuenciaNumeros[numero]++;
+    }
+}
+for (let j = 0; j < frecuenciaNumeros.length; j++) {
+    document.write("Cantidad de " + j + ": " + frecuenciaNumeros[j] + "<br>");
+}
+
+document.write("Longitud total del texto: " + caracteres.length + "<br>");
+
+// También, imprime el texto original resaltado en negrita utilizando document.write() y la función join().
+document.write("Texto original: <b>" + caracteres.join("") + "</b>");
+    </script>
+</body>
+</html>

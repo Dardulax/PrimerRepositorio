@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista</title>
+    <link rel="stylesheet" href="CSS.css">
+</head>
+<body>
+    <h1 class="title">LISTA DE LA COMPRA</h1>
+    <div class="añadir">
+        <input type="text" id="texto">
+        <button id="boton" onclick="Agregar()">Insertar</button>
+        <button id="borrar" onclick="Delete()">Borrar</button>
+    </div>
+    <div class="contenedor" id="contenedor">
+        
+    </div>
+    <script>
+        //creamos una funcion que al presionar el boton Insertar
+        //se active la siguiente linea de comandos
+        function Agregar(){
+            //creamos una variable que almacene el texto introducido en el input
+            var copiar= document.getElementById('texto').value;
+            //creamos un if con la finalidad de 
+            //una vez almacenado la información en la varriable
+            //hacemos una cadena de acciones
+            if(copiar){
+                //creamos una variable para que almacene la dirección del repositorio
+                //donde vamos a enviar cualquier información
+                var Pegar= document.getElementById('contenedor');
+                //pegar tiene la dirrecion del lugar, e innerHTML 
+                //Nos indica que imprimira los siguientes valores en 
+                //la dirreccion indicada <+=> que se puede añadir varias listas
+                //sin necesidad de borrar el anterior a esta
+                Pegar.innerHTML += '<li>' + copiar + '</li>';
+
+                //este codigo borra el contenido dentro del input 
+                //ya que transforma el contenido en '' todo aquello que esta dentro 
+                //de texto
+                document.getElementById('texto').value='';
+
+            }
+        }
+        function Delete(){
+            var borrar= document.getElementById('contenedor');
+            borrar.innerHTML='';
+        }
+
+
+    </script>
+</body>
+</html>

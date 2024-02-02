@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+    <channel> 
+        
+            <title> I.E.S LA VEREDA</title>
+            <link>https://portal.edu.gva.es/lavereda/es/centro-es/ </link>
+            <description>EDUCACIÓN SECUNDARIA OBLIGATORIA I.E.S LA VEREDA </description>
+        
+        <item>
+            <title>CALENDARIO DEL CURSO 2023/24</title>
+            <link>https://portal.edu.gva.es/lavereda/wp-content/uploads/sites/107/2023/08/Calendari-Escolar-23-24-1.pdf </link>
+            <description>CALENDARIO ESCOLAR  </description>
+        </item>
+        <item>
+            <title>Renovacio Consell escolar</title>
+            <link>https://portal.edu.gva.es/lavereda/es/renovacion-del-consejo-escolar/ </link>
+            <description>Eleccions del consell escolar </description>
+        </item>
+        <item>
+            <title> WEB FAMILIA</title>
+            <link>https://familia.edu.gva.es/wf-front/myitaca/login_wf?idioma=c </link>
+            <description>PORTAL WEB FAMILIA </description>
+        </item> 
+    </channel>
+</rss>
