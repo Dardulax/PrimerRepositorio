@@ -1,0 +1,45 @@
+*{
+    margin: 0%;
+    border: 3px red ;
+
+}
+header{
+    background-color: rgb(255, 170, 0);
+    display: flex;
+    min-height: 70px;
+    justify-content: space-between;
+    align-items: center;
+}
+.imagen{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+}
+.imagen img{
+    height: 70px;
+    padding: 10px;
+}
+.login a{
+    text-decoration: none;
+    color: black;
+    margin-right: 17px;
+    animation-duration:0,3s;
+    border:1px transparent rgb(255, 170, 0);
+    padding: 10px;
+    font-weight: 600;
+}
+.login a:hover{
+    color: white;
+    border: solid black 1px;
+    padding: 10px;
+    font-size: 1em;
+}
+@media (max-width:700px){
+    header{
+        flex-direction: column;
+    }
+    .login{
+    }
+
+}
